@@ -25,7 +25,7 @@ app.get('/timestamp/:time?', function (req, res) {
 
 app.get('/whoami', function (req, res) {
   // var date;
-  var header = req.params.header;
+  // var header = req.params.header;
   var result = {};
   // console.log(req);
   //console.log('req.ips:',req.ip);
