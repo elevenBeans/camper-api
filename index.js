@@ -1,7 +1,7 @@
 var express = require('express')
 var app = express()
 
-app.get('/:time', function (req, res) {
+app.get('/timestamp/:time?', function (req, res) {
   var date;
   var time = req.params.time;
   var result = {};
@@ -20,6 +20,23 @@ app.get('/:time', function (req, res) {
     result.unix = null;
   }
   // console.log(date);
+  res.send(result);
+})
+
+app.get('/whoami', function (req, res) {
+  // var date;
+  var header = req.params.header;
+  var result = {};
+  // console.log(req);
+  //console.log('req.ips:',req.ip);
+  //console.log('req.acceptedLanguages:',req.acceptedLanguages);
+  //console.log('req.UA:', req.headers['User-Agent']);
+  // console.log(date);
+
+  result.ipaddress = req.ip;
+  result.language = req.headers['accept-language'];
+  result.software = req.headers['user-agent'];
+
   res.send(result);
 })
 
