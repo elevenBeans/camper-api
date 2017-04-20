@@ -1,0 +1,27 @@
+{
+  "name": "camper-api",
+  "version": "1.0.0",
+  "description": "API exercises in freecodecamp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elevenBeans/camper-api.git"
+  },
+  "keywords": [
+    "API",
+    "freecode",
+    "camp"
+  ],
+  "author": "elevenbeans",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elevenBeans/camper-api/issues"
+  },
+  "homepage": "https://github.com/elevenBeans/camper-api#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
