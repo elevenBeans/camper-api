@@ -19,19 +19,12 @@ app.get('/timestamp/:time?', function (req, res) {
     result.natural = null;
     result.unix = null;
   }
-  // console.log(date);
   res.send(result);
 })
 
 app.get('/whoami', function (req, res) {
-  // var date;
-  // var header = req.params.header;
+
   var result = {};
-  // console.log(req);
-  //console.log('req.ips:',req.ip);
-  //console.log('req.acceptedLanguages:',req.acceptedLanguages);
-  //console.log('req.UA:', req.headers['User-Agent']);
-  // console.log(date);
 
   result.ipaddress = req.ip;
   result.language = req.headers['accept-language'];
@@ -40,10 +33,43 @@ app.get('/whoami', function (req, res) {
   res.send(result);
 })
 
+let short_url_obj = {};
+
+app.get('/little-url/:protocol?(\:\/)?/:url?', function (req, res) {
+
+  var isShort = /\d+/.test(req.params.protocol);
+  var result = {};
+
+  if(!isShort){
+
+    var original_url = req.params.protocol +  '://' + req.params.url;
+    var short_url = Math.floor(Math.random()*10000);
+
+    // console.log('1:',isShort);
+    // console.log('2:',req.params.url);
+    // console.log('3:',original_url);
+
+    if(!req.params.protocol){
+      result.error = 'no protocol!';
+    } else if (!req.params.url){
+      result.error = 'pls fullfill url!';
+    } else {
+      result.original_url = original_url;
+      result.short_url = req.protocol + '://' + req.hostname + '/little-url/' + short_url;
+    }
+    short_url_obj[short_url] = original_url;
+    res.send(result);
+    
+  } else {
+    res.redirect(short_url_obj[req.params.protocol]);
+  }
+
+})
+
 app.get('/', function(req, res){
   res.send('hello heruko, by elevenbeans');
 });
 
 app.listen(process.env.PORT || 8080, function () {
-  console.log('Example app listening!')
+  console.log('Example app listening on', process.env.PORT || 8080)
 })
