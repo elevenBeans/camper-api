@@ -33,3 +33,25 @@ Output:
 }
 
 ```
+
+## URL Shortener Microservice
+
+Router: `/little-url/:url?`
+
+`eg. https://camper-api-ele.herokuapp.com/little-url/https://www.ctrip.com`
+
+Output:
+
+```
+{
+	original_url: "https://www.ctrip.com",
+	short_url: "http://camper-api-ele.herokuapp.com/little-url/118"
+}
+
+```
+
+Router: `http://camper-api-ele.herokuapp.com/little-url/118`
+
+Output:
+
+![](https://raw.githubusercontent.com/elevenBeans/Grocery/master/ShortURLResult.png)
