@@ -78,7 +78,7 @@ app.get('/imgSearch/:name?',function(req,res){
       method: 'GET',
       url: 'https://api.cognitive.microsoft.com/bing/v5.0/images/search',
       qs: {
-        q: imgName,
+        q: imgName || 'jobs',
         count: num
       },
       headers: {
