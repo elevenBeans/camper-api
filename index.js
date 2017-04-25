@@ -2,7 +2,10 @@ var express = require('express');
 var app = express();
 
 var mongo = require("mongodb").MongoClient;
-var dbUrl = 'mongodb://localhost:27017/imgsearch';
+// dev
+// var dbUrl = 'mongodb://localhost:27017/imgsearch'; 
+// pro
+var dburl = 'mongodb://heroku_hx4c8tc8:mdjkdun38sumphditramegul9g@ds119091.mlab.com:19091/heroku_hx4c8tc8';
 // var imgSearch = require("google-images");
 // var imgClient = new imgSearch(cseId,apiKey); heroku addons:create mongolab:sandbox
 
