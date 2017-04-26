@@ -114,3 +114,23 @@ Output:
 	"when": "2017-04-25T12:18:58.867Z"
 }]
 ```
+
+## File Metadata Microservice Complete
+
+Router: `/file`
+
+`eg. http://camper-api-ele.herokuapp.com/file`
+
+Output:
+
+![](https://raw.githubusercontent.com/elevenBeans/Grocery/master/ShortURLResult.png)
+
+Router: `/get-filesize`
+
+Output:
+
+``` json
+{
+	"size": 1409
+}
+```
