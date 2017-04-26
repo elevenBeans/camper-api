@@ -58,7 +58,7 @@ Output:
 
 ## Image Search Abstraction Layer
 
-Router: `/imgsearch/keywords?offset=3`
+Router: `/imgsearch/:keywords?offset=3`
 
 `eg. https://camper-api-ele.herokuapp.com/imgsearch/aircraftcarrier?offset=3`
 
