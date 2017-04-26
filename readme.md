@@ -36,21 +36,21 @@ Output:
 
 ## URL Shortener Microservice
 
-Router: `/little-url/:url?`
+Router: `/littleurl/:url?`
 
-`eg. https://camper-api-ele.herokuapp.com/little-url/https://www.ctrip.com`
+`eg. https://camper-api-ele.herokuapp.com/littleurl/https://www.ctrip.com`
 
 Output:
 
 ``` json
 {
 	"original_url": "https://www.ctrip.com",
-	"short_url": "http://camper-api-ele.herokuapp.com/little-url/118"
+	"short_url": "http://camper-api-ele.herokuapp.com/littleurl/118"
 }
 
 ```
 
-Router: `/little-url/118`
+Router: `/littleurl/118`
 
 Output:
 
@@ -58,9 +58,9 @@ Output:
 
 ## Image Search Abstraction Layer
 
-Router: `/imgSearch/keywords?offset=3`
+Router: `/imgsearch/keywords?offset=3`
 
-`eg. https://camper-api-ele.herokuapp.com/imgSearch/aircraftcarrier?offset=3`
+`eg. https://camper-api-ele.herokuapp.com/imgsearch/aircraftcarrier?offset=3`
 
 Output:
 
@@ -95,7 +95,7 @@ Output:
 
 ```
 
-Router: `/imgSearch-latest`
+Router: `/imgsearch-latest`
 
 Output:
 

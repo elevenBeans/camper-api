@@ -1,14 +1,24 @@
 var express = require('express');
+
+var multer  = require('multer');
+var upload = multer({ dest: 'uploads/' });
+
+var request = require('request');
+
 var app = express();
 
 var mongo = require("mongodb").MongoClient;
 // dev
 // var dbUrl = 'mongodb://localhost:27017/imgsearch'; 
+
 // pro
 var dbUrl = 'mongodb://heroku_hx4c8tc8:mdjkdun38sumphditramegul9g@ds119091.mlab.com:19091/heroku_hx4c8tc8';
 
-var request = require('request');
 var apiKey = '3452d74b964f4b5392e3e4cf3397ca3e';
+
+// views is directory for all template files
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
 
 app.get('/timestamp/:time?', function (req, res) {
   var date;
@@ -43,7 +53,7 @@ app.get('/whoami', function (req, res) {
 
 let short_url_obj = {};
 
-app.get('/little-url/:protocol?(\:\/)?/:url?', function (req, res) {
+app.get('/littleurl/:protocol?(\:\/)?/:url?', function (req, res) {
 
   var isShort = /\d+/.test(req.params.protocol);
   var result = {};
@@ -59,7 +69,7 @@ app.get('/little-url/:protocol?(\:\/)?/:url?', function (req, res) {
       result.error = 'url incomplete!';
     } else {
       result.original_url = original_url;
-      result.short_url = req.protocol + '://' + req.hostname + '/little-url/' + short_url;
+      result.short_url = req.protocol + '://' + req.hostname + '/littleurl/' + short_url;
       short_url_obj[short_url] = original_url;
     }
     res.send(result);
@@ -70,7 +80,7 @@ app.get('/little-url/:protocol?(\:\/)?/:url?', function (req, res) {
 
 })
 
-app.get('/imgSearch/:name?',function(req,res){
+app.get('/imgsearch/:name?',function(req,res){
     var num = req.query.offset ? req.query.offset : 1;
     var imgName = req.params.name;
     var date = new Date().toISOString();
@@ -134,7 +144,7 @@ app.get('/imgSearch/:name?',function(req,res){
     }
 });
 
-app.get('/imgSearch-latest',function(req,res){
+app.get('/imgsearch-latest',function(req,res){
    mongo.connect(dbUrl,function(err,db){
        var imgSearchList = db.collection('imgSearchList');
        imgSearchList.find({},{_id:0}).sort({_id:-1}).limit(10).toArray(function(err,docs){
@@ -147,6 +157,18 @@ app.get('/imgSearch-latest',function(req,res){
           }
        });
    });
+});
+
+app.get('/file',function(req, res){
+  res.render('./fileSize');
+});
+
+app.post('/get-filesize', upload.single('fileInput'), function (req, res, next) {
+  // req.file is the file info
+  // req.body will hold the text fields, if there were any
+  var result = {};  
+  result.size = req.file.size;
+  res.send(result);
 });
 
 app.get('/', function(req, res){

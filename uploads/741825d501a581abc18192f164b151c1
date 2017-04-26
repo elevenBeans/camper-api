@@ -1,0 +1,33 @@
+## 李斌个人周报
+ 
+### 2016.09W3
+ 
+### 摘要
+
++ Ctrip 国际版 H5 Node 后台搭建
++ Ctrip 国际版 React 日历组件改版
+
+### 本周工作
+
+1. Ctrip 国际版 Node 后台搭建 [Gitlab 项目地址](http://git.dev.sh.ctripcorp.com/lbin/CGNS/tree/master) / [Gitblit 地址](http://code.ctripcorp.com/plugins/gitblit/tree/?f=CGNS&r=International/Mobile/Mobile.Resource&h=master)
+   + 加入前端 React 组件代码，加入 Lizard框架，Run 通首页
+   + 完成热门酒店城市接口：`gethotelstopcity` 实现
+   + 完成热门机票城市接口：`getflightstopcityfrom` `getflightstopcityto`实现
+   + 热门火车城市接口开发：`gettrainhotstation`, 实现 Request 模块调用 IBUTrainAPI: `TrainHotStation`
+
+2. Ctrip 国际版 日历组件改版
+   + UI 改版
+   + 更新 Hotel checkIn/checkOut 分选日期的逻辑为： 一次性两次点击获取checkIn/checkOut 日期
+   + 更新 Flight 往返分选日期逻辑如上
+   + 引入 UI 自适应 REM 方案处理 `boder-radius`, 保持日期底色图案为正圆形
+ 
+ 
+### 下周计划
+ 
+1. 实现 hotel list页面接口: `listdata`，detail页接口: `detaildata`
+2. H5 新版日历组件增加 checkIn/checkOut Date 组件内实时显示功能
+ 
+### 感想和思考
+
++ 本周虽然只有三天，但是效率不错
++ 兴趣驱动的开发过程感觉很好
