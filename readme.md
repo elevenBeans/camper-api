@@ -54,7 +54,7 @@ Router: `/littleurl/118`
 
 Output:
 
-![](https://raw.githubusercontent.com/elevenBeans/Grocery/master/ShortURLResult.png)
+![](https://raw.githubusercontent.com/elevenBeans/camper-api/master/ShortURLResult.png)
 
 ## Image Search Abstraction Layer
 
@@ -123,7 +123,7 @@ Router: `/file`
 
 Output:
 
-![](https://raw.githubusercontent.com/elevenBeans/Grocery/master/ShortURLResult.png)
+![](https://raw.githubusercontent.com/elevenBeans/camper-api/master/file.png)
 
 Router: `/get-filesize`
 
