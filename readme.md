@@ -50,7 +50,7 @@ Output:
 
 ```
 
-Router: `http://camper-api-ele.herokuapp.com/little-url/118`
+Router: `/little-url/118`
 
 Output:
 
@@ -95,7 +95,7 @@ Output:
 
 ```
 
-Router: `http://camper-api-ele.herokuapp.com/imgSearch-latest`
+Router: `/imgSearch-latest`
 
 Output:
 
