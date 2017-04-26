@@ -6,8 +6,6 @@ var mongo = require("mongodb").MongoClient;
 // var dbUrl = 'mongodb://localhost:27017/imgsearch'; 
 // pro
 var dbUrl = 'mongodb://heroku_hx4c8tc8:mdjkdun38sumphditramegul9g@ds119091.mlab.com:19091/heroku_hx4c8tc8';
-// var imgSearch = require("google-images");
-// var imgClient = new imgSearch(cseId,apiKey); heroku addons:create mongolab:sandbox
 
 var request = require('request');
 var apiKey = '3452d74b964f4b5392e3e4cf3397ca3e';
