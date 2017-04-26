@@ -167,7 +167,7 @@ app.post('/get-filesize', upload.single('fileInput'), function (req, res, next) 
   // req.file is the file info
   // req.body will hold the text fields, if there were any
   var result = {};  
-  result.size = req.file.size;
+  result.size = req.file && req.file.size;
   res.send(result);
 });
 
